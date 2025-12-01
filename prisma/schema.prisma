@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// User model
+// Role values: ADMIN, REDACTEUR, MEMBRE, INVITE
+model User {
+  id          String    @id @default(cuid())
+  email       String    @unique
+  role        String    @default("MEMBRE")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  lastLoginAt DateTime?
+  posts       Post[]
+}
+
+// Blog Post model
+// Status values: DRAFT, PUBLISHED
+model Post {
+  id            String        @id @default(cuid())
+  slug          String        @unique
+  title         String
+  excerpt       String
+  content       String
+  category      String
+  isMembersOnly Boolean       @default(false)
+  featured      Boolean       @default(false)
+  status        String        @default("DRAFT")
+  publishedAt   DateTime?
+  authorId      String?
+  author        User?         @relation(fields: [authorId], references: [id])
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  stats         ArticleStats?
+}
+
+// Article statistics for tracking clicks
+model ArticleStats {
+  id          String    @id @default(cuid())
+  postId      String    @unique
+  post        Post      @relation(fields: [postId], references: [id], onDelete: Cascade)
+  clicks      Int       @default(0)
+  lastClicked DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}

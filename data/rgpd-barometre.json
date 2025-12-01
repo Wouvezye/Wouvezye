@@ -1,0 +1,38 @@
+{
+  "lastUpdate": "2024-01-15",
+  "sampleSize": 20,
+  "stats": {
+    "policyPresent": 65,
+    "cookieCompliant": 40,
+    "contactRights": 55,
+    "formInfo": 35,
+    "thirdPartyTrackers": 75
+  },
+  "criteria": [
+    {
+      "id": "policy",
+      "name": "Politique de confidentialité",
+      "description": "Le site affiche une politique de confidentialité accessible."
+    },
+    {
+      "id": "cookies",
+      "name": "Gestion des cookies",
+      "description": "Le bandeau cookies permet un refus aussi simple que l'acceptation."
+    },
+    {
+      "id": "contact",
+      "name": "Contact pour exercer ses droits",
+      "description": "Un contact (email, formulaire) est clairement indiqué pour les demandes RGPD."
+    },
+    {
+      "id": "forms",
+      "name": "Information dans les formulaires",
+      "description": "Les formulaires indiquent la finalité du traitement et les droits."
+    },
+    {
+      "id": "trackers",
+      "name": "Traceurs tiers",
+      "description": "Absence ou transparence sur les traceurs publicitaires tiers."
+    }
+  ]
+}

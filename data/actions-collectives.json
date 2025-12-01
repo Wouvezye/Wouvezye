@@ -1,0 +1,19 @@
+{
+  "actions": [
+    {
+      "id": "frais-bancaires-2024",
+      "title": "Frais bancaires abusifs",
+      "description": "Plusieurs adhérents signalent des frais de tenue de compte et commissions d'intervention injustifiés ou excessifs par rapport à la métropole.",
+      "status": "collecting",
+      "category": "facture",
+      "testimoniesCount": 12,
+      "testimoniesGoal": 50,
+      "createdAt": "2024-01-10"
+    }
+  ],
+  "statusLabels": {
+    "collecting": "Collecte en cours",
+    "engaged": "Action engagée",
+    "resolved": "Résolu"
+  }
+}
