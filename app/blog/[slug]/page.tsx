@@ -9,10 +9,10 @@ import { Calendar, Lock, ArrowLeft, AlertTriangle, Heart, MessageSquare, Globe }
 import { MarkdownRenderer } from "@/components/markdown-renderer"
 
 export async function generateStaticParams() {
-  const posts = await getPublishedPosts()
-  return posts.map((post) => ({ slug: post.slug }))
-}
-
+//   const posts = await getPublishedPosts()
+//   return posts.map((post) => ({ slug: post.slug }))
+// }
+// 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = await getPostBySlug(slug)
